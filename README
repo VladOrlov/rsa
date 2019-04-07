@@ -1,0 +1,4 @@
+RSA Encryption/Decryption
+
+To build executable on *nix systems type:
+ $ make Rsa-crypt
