@@ -12,9 +12,7 @@ public:
 
     BigInteger gcd(BigInteger a, BigInteger b, BigInteger &x, BigInteger &y);
 
-    /*
-     * Generate public and private keys
-    */
+    //Generate public and private keys
     void static generateKeys(RsaKey &publicKey, RsaKey &privateKey);
 
     //encrypt a string

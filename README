@@ -2,3 +2,15 @@ RSA Encryption/Decryption
 
 To build executable on *nix systems type:
  $ make Rsa-crypt
+
+ 1. Generate keys g /home/vorlov/CLionProjects/rsa/public_key /home/vorlov/CLionProjects/rsa/private_key
+
+ 2. Encrypt data e /home/vorlov/CLionProjects/rsa/source_message.txt /home/vorlov/CLionProjects/rsa/encrypted_message.txt /home/vorlov/CLionProjects/rsa/public_key
+
+ 3. Decrypt data d /home/vorlov/CLionProjects/rsa/encrypted_message.txt /home/vorlov/CLionProjects/rsa/decrypted_message.txt /home/vorlov/CLionProjects/rsa/private_key
+
+ ./rsa g /home/vorlov/CLionProjects/rsa/public_key /home/vorlov/CLionProjects/rsa/private_key
+
+ ./rsa e /home/vorlov/CLionProjects/rsa/source_message.txt /home/vorlov/CLionProjects/rsa/encrypted_message.txt /home/vorlov/CLionProjects/rsa/public_key
+
+ ./rsa d /home/vorlov/CLionProjects/rsa/encrypted_message.txt /home/vorlov/CLionProjects/rsa/decrypted_message.txt /home/vorlov/CLionProjects/rsa/private_key

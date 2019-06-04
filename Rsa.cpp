@@ -1,7 +1,7 @@
 #include "Rsa.h"
 
 //key length (decimal digits)
-#define KEY_LENGTH 80
+#define KEY_LENGTH 128
 
 
 void Rsa::generateKeys(RsaKey &publicKey, RsaKey &privateKey) {
@@ -11,14 +11,13 @@ void Rsa::generateKeys(RsaKey &publicKey, RsaKey &privateKey) {
     BigInteger n, eilerFunc, divider, e;
 
     //getting 2 prime numbers
-    while (!p.prime())
+    while (!p.prime()) {
         p.random(KEY_LENGTH / 2);
-
-    while (!q.prime())
+    }
+    while (!q.prime()) {
         q.random(KEY_LENGTH / 2);
-
+    }
     n = p * q;
-
 
     //Euler's function
     eilerFunc = (p - 1) * (q - 1);
@@ -33,33 +32,12 @@ void Rsa::generateKeys(RsaKey &publicKey, RsaKey &privateKey) {
         extEuclid(eilerFunc, d, e);
     } while (e < 0);
 
-
     //keys
     publicKey.a = d;
     publicKey.b = n;
     privateKey.a = e;
     privateKey.b = n;
 
-
-    /*
-    vector <char> a = d.toBinary();
-    BigInteger message = 153;
-    BigInteger crypt;
-    BigInteger decrypt;
-
-
-    crypt = message.calcPowMod(a,n);
-
-
-    a = e.toBinary();
-    decrypt = crypt.calcPowMod(a,n);
-
-
-    if (message == decrypt)
-    cout << "Test passed\n";
-    else
-    cout << "Test failed\n";
-    */
 }
 
 
@@ -109,8 +87,9 @@ BigInteger Rsa::encrypt(string &data, const vector<char> &a, const BigInteger &b
     BigInteger block;
     block = 1;
 
-    if (data.length() > (KEY_LENGTH - 4) / 3)
+    if (data.length() > (KEY_LENGTH - 4) / 3) {
         throw RsaException("size of the input string is exceeds size limit");
+    }
 
     //input string > BigInteger
     //the first digit = 1, next 3 digits = code
@@ -119,8 +98,9 @@ BigInteger Rsa::encrypt(string &data, const vector<char> &a, const BigInteger &b
         buff = int(data[i]);
 
         //cp1251 support
-        if (buff < 0)
+        if (buff < 0) {
             buff = 256 + buff;
+        }
 
         block = block * int(pow(10.0, 3 - buff.size()));
         block.concat(buff);
