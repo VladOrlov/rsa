@@ -3,14 +3,14 @@ RSA Encryption/Decryption
 To build executable on *nix systems type:
  $ make Rsa-crypt
 
- 1. Generate keys g /home/vorlov/CLionProjects/rsa/public_key /home/vorlov/CLionProjects/rsa/private_key
+ 1. Generate keys g <path_to_project>/rsa/public_key <path_to_project>/rsa/private_key
 
- 2. Encrypt data e /home/vorlov/CLionProjects/rsa/source_message.txt /home/vorlov/CLionProjects/rsa/encrypted_message.txt /home/vorlov/CLionProjects/rsa/public_key
+ 2. Encrypt data e <path_to_project>/rsa/source_message.txt <path_to_project>/rsa/encrypted_message.txt <path_to_project>/rsa/public_key
 
- 3. Decrypt data d /home/vorlov/CLionProjects/rsa/encrypted_message.txt /home/vorlov/CLionProjects/rsa/decrypted_message.txt /home/vorlov/CLionProjects/rsa/private_key
+ 3. Decrypt data d <path_to_project>/rsa/encrypted_message.txt <path_to_project>/rsa/decrypted_message.txt <path_to_project>/rsa/private_key
 
- ./rsa g /home/vorlov/CLionProjects/rsa/public_key /home/vorlov/CLionProjects/rsa/private_key
+ ./rsa g <path_to_project>/rsa/public_key <path_to_project>/rsa/private_key
 
- ./rsa e /home/vorlov/CLionProjects/rsa/source_message.txt /home/vorlov/CLionProjects/rsa/encrypted_message.txt /home/vorlov/CLionProjects/rsa/public_key
+ ./rsa e <path_to_project>/rsa/source_message.txt <path_to_project>/rsa/encrypted_message.txt <path_to_project>/rsa/public_key
 
- ./rsa d /home/vorlov/CLionProjects/rsa/encrypted_message.txt /home/vorlov/CLionProjects/rsa/decrypted_message.txt /home/vorlov/CLionProjects/rsa/private_key
+ ./rsa d <path_to_project>/rsa/encrypted_message.txt <path_to_project>/rsa/decrypted_message.txt <path_to_project>/rsa/private_key
